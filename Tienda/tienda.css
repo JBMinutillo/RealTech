@@ -18,6 +18,13 @@ header{
     height: 10vh;
 }
 
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 /*--------------------------------------------------------Nav-----------------------------------------------------*/
 
 .nav{
@@ -84,11 +91,12 @@ header{
 }
 
 .menu li a:hover{
-    padding: 6% 8%;
-    padding: 8% 10%;
-    border-radius: 10px;
-    color: white;
-    border: solid 1px white;
+    font-size: 17px;
+    transition: all 0.5s ease;
+    text-shadow: 0 0 5px #d487d4,
+    0 0 25px #d487d4,
+    0 0 50px #a049b4,
+    0 0 75px #a049b4;
 }
 
 .imagen_carrito{
@@ -129,25 +137,31 @@ header{
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-
-.cards{
+.product_container{
+    width: 80%;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    align-content:flex-start ;
+    gap: 30px;
+    margin-top:8% ;
 }
 
 .card{
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 470px;
-    gap: 15px;
+    height: 435px;
+    gap: 10px;
+    color: white;
+    border: solid 1px white;
+    transition: all 0.5s ease;
 }
 
-.card img{
+.img_card{
     width: 300px;
     height: 300px;
+    background-color: grey;
 }
 
 .card a{
@@ -155,6 +169,7 @@ header{
     color: white;
     padding: 10px 15px;
     border: solid 1px #d487d4;
+    font-size: 15px;
 }
 
 .card a:hover{
@@ -162,34 +177,21 @@ header{
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-
-.ver_mas{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 125px;
+.producto_name{
+    margin-top: 15px;
 }
 
-.ver_mas{
-    display: flex;
-    justify-content: center;
-    color: white;
-    padding: 25px 60px;
-    border: solid 3px white;
-    font-size: 20px;
-    text-decoration: none;
+.btn_card{
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.link_vermas{
     transition: all 0.5s ease;
-    background-color: black;
-    cursor: pointer;
-    /* box-shadow: 0 0 5px #d487d4,
-    0 0 25px #d487d4,
-    0 0 50px #a049b4,
-    0 0 75px #a049b4; */
 }
 
-.ver_mas:hover{
-    padding: 30px 65px;
-    font-size: 25px;
+.link_vermas:hover{
+    font-size: 18px;
     color: white;
     font-weight: 500;
     background-color: black;
@@ -200,51 +202,61 @@ header{
     0 0 75px #a049b4;
 }
 
-/*---------------------------------------------------------------------------------------------------------------------------*/
-
-.filter {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
+.btn_carrito{
+    text-decoration: none;
     color: white;
-    margin-top: 8%;
-  }
-
-  .select:hover{
-    box-shadow: 0 0 5px #d487d4,
-    0 0 25px #d487d4,
-    0 0 50px #a049b4;
-  }
-  
-  .product {
-    border: 1px solid #ccc;
     padding: 10px;
-    margin-bottom: 10px;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  .hidden {
-    display: none;
-  }
-
-.select{
-    width: 15%;
-    color: white;
+    border: solid 1px #d487d4;
+    font-size: 15px;
     background-color: transparent;
-    text-align: center;
-    font-size: 18px;
+    font-weight: 500;
     transition: all 0.5s ease;
 }
 
-option{
+.btn_carrito:hover{
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
     background-color: black;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 5px #d487d4,
+    0 0 25px #d487d4,
+    0 0 50px #a049b4,
+    0 0 75px #a049b4;
+    cursor: pointer;
 }
 
-.h2_categories{
-    font-weight: 200;
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+.categories{
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+    gap: 10px;
 }
 
+.category{
+    padding: 7px 20px;
+    text-decoration: none;
+    color: white;
+    border: solid 1px #d487d4;
+    font-size: 15px;
+    background-color: transparent;
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
 
+.category:hover{
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    background-color: black;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 5px #d487d4,
+    0 0 25px #d487d4,
+    0 0 50px #a049b4,
+    0 0 75px #a049b4;
+    cursor: pointer;
+}
 
 
