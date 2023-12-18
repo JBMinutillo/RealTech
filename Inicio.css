@@ -457,6 +457,10 @@ footer img{
         top: 400%;
     left: 32%;
     }
+
+    .logo2:hover{
+        left: 31.85%;
+    }
 }
 
 @media screen and (max-width: 850px){
@@ -471,6 +475,10 @@ footer img{
     .logo2{
         top: 400%;
     left: 30%;
+    }
+
+    .logo2:hover{
+        left: 29.85%;
     }
 }
 
@@ -490,6 +498,10 @@ footer img{
     .logo2{
         top: 400%;
     left: 28%;
+    }
+
+    .logo2:hover{
+        left: 27.85%;
     }
 }
 
@@ -517,6 +529,10 @@ footer img{
     .logo2{
         top: 400%;
     left: 26%;
+    }
+
+    .logo2:hover{
+        left: 25.85%;
     }
 }
 
@@ -554,6 +570,10 @@ footer img{
 
     footer{
         gap: 70px;
+    }
+
+    .logo2:hover{
+        left: 22.85%;
     }
 }
 
@@ -602,6 +622,10 @@ footer img{
     footer{
         gap: 40px;
     }
+
+    .logo2:hover{
+        left: 20.85%;
+    }
 }
 
 @media screen and (max-width: 430px){
@@ -616,6 +640,10 @@ footer img{
     .logo2{
         top: 400%;
     left: 21%;
+    }
+
+    .logo2:hover{
+        left: 20.85%;
     }
 }
 
@@ -635,6 +663,10 @@ footer img{
 
     footer{
         gap: 10px;
+    }
+
+    .logo2:hover{
+        left: 18.85%;
     }
 }
 
@@ -671,6 +703,10 @@ footer img{
         top: 400%;
     left: 18%;
     }
+
+    .logo2:hover{
+        left: 17.85%;
+    }
 }
 
 @media screen and (max-width: 365px){
@@ -680,11 +716,6 @@ footer img{
 
     .section2{
         margin-top: 280%;
-    }
-
-    .logo2{
-        top: 400%;
-    left: 19%;
     }
 
     .img_auriculares{
@@ -708,6 +739,10 @@ footer img{
     .logo2{
         top: 400%;
     left: 18%;
+    }
+
+    .logo2:hover{
+        left: 17.85%;
     }
 }
 
