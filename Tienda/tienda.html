@@ -10,18 +10,50 @@
     <!--------------------------------------------------------Header------------------------------------------------------------->
 
     <header>
+
         <nav class="nav">
             <div class="logo">Realtech</div>
+            <div class="nav2">
             <div class="explorador">
-                <ul class="menu">
+
+                <!--<label for="menu_toglle">
+                    <div class="navbar_list"><img src="/Img/2849812_menu_multimedia_bars_media_icon.png" alt=""></div>
+                </label> -->
+                
+                <div class="menu_label">
+                    <i><img src="/Img/2849812_menu_multimedia_bars_media_icon.png" alt="" class="bars"></i>
+                </div>
+                
+                <ul class="menu navbar_list" id="toggle_menu">
                     <li><a href="/index.html">Inicio</a></li>
                     <li><a href="/Html/Nosotros.html">Nosotros</a></li>
                     <li><a href="/Html/Register.html">Ingresá</a></li>
                 </ul>
-                <div>
-                    <img src="/Img/47683_webshop_ecommerce_empty_shopping cart_icon.png" alt="" class="imagen_carrito">
-                    <div id="numero"></div>
+            </div>
+
+            <div class="cart_label">
+                <i class="fa_solid fa_cart_shopping cart_icon">
+                  <div class="cart_bubble"><img src="/Img/47683_webshop_ecommerce_empty_shopping cart_icon.png" alt="" class="imagen_carrito"></div>
+                </i>
+              </div>
+      
+              <div class="cart">
+                <h2>Tus Productos</h2>
+      
+                <div class="cart_container"></div>
+      
+                <span class="divider"></span>
+      
+                <div class="cart_total">
+                  <p>Total:</p>
+                  <span class="total">$595</span>
                 </div>
+                <button class="btn_buy">Comprar</button>
+                <button class="btn_delete">Vaciar carrito</button>
+              </div>
+      
+        <div class="overlay"></div>
+              
             </div>
         </nav>
     </header>

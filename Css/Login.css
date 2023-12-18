@@ -105,3 +105,39 @@ button:hover{
 .div_register h2{
     margin-top: 25px;
 }
+
+@media  screen and (max-width: 1100px){
+    .div_register{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .div_register{
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .div_register{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .div_register{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .div_register{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .div_register{
+        width: 100%;
+    }
+}

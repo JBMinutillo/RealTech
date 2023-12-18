@@ -11,6 +11,21 @@ const categoriesContainer = document.querySelector(".categories");
 //HTML colection de todas las categorias
 const categoriesList = document.querySelectorAll(".category");
 
+//Carrito
+const cartBtn = document.querySelector(".cart_label");
+
+//btn para abrir y cerrar el menu
+const menuBtn =  document.querySelector(".menu_label");
+
+//carrito div
+const cartMenu = document.querySelector(".cart");
+
+//menu(hamburguesa)
+const barsMenu = document.querySelector(".navbar_list");
+
+//overlay
+const overlay = document.querySelector(".overlay");
+
 //Funcion para crear el html del producto
 const createProductTemplate = (products) => {
   const { id, nombre, precio, stock, categoria, img} = products;
@@ -67,8 +82,8 @@ const changeBtnState = (selectedCategory) =>{
       return;
     }
     categoryBtn.classList.add('active')
-  })
-}
+  });
+};
 
 //funcion para cambiar el estado del filtro activo
 
@@ -106,11 +121,46 @@ const isInactiveFilterBtn = (element) =>{
   );
 };
 
+//Carrito
+
+const toggleCart = () => {
+  cartMenu.classList.toggle("open_cart");
+
+   if(barsMenu.classList.contains("open_menu")) {
+    barsMenu.classList.remove("open_menu");
+    return;
+   }
+
+  overlay.classList.toggle("show_overlay");
+};
+
+const toggleMenu = () => {
+  barsMenu.classList.toggle("open_menu");
+
+if(cartMenu.classList.contains("open_cart")){
+  cartMenu.classList.remove("open_cart");
+  return;
+}
+
+  overlay.classList.toggle("show_overlay");
+};
+
+const closeOverlayClick = () => {
+  barsMenu.classList.remove("open_menu");
+  cartMenu.classList.remove("open_cart");
+  overlay.classList.remove("show_overlay");
+}
+
 //Funcion init
 const init = () => {
   renderProducts(AppState.products[0]);
   btnVerMas.addEventListener("click", showMoreProducts);
   categoriesContainer.addEventListener("click", applyFilter);
+
+  cartBtn.addEventListener("click", toggleCart);
+  menuBtn.addEventListener("click", toggleMenu);
+
+  overlay.addEventListener("click", closeOverlayClick);
 };
 
 init();

@@ -33,6 +33,7 @@ header{
     justify-content: space-between;
     padding: 1% 2%;
     transition: all 0.5s ease;
+    height: 11.5vh;
 }
 
 .nav.active{
@@ -43,6 +44,7 @@ header{
 }
 
 .nav.active .logo{
+    display: block;
     color: white;
     margin-left: 0.8%;
 }
@@ -83,14 +85,6 @@ header{
     text-decoration: none;
     font-weight: bold;
     transition: all 0.5s ease;
-}
-
-.menu li a:hover{
-    padding: 6% 8%;
-    padding: 8% 10%;
-    border-radius: 10px;
-    color: white;
-    border: solid 2px white;
 }
 
 .imagen_carrito{
@@ -264,8 +258,8 @@ header{
 
 .section3{
     width: 100%;
-    height: 50vh;
-    margin-top: 20%;
+    height: auto;
+    margin-top: 8%;
     display: flex;
     justify-content: center;
 }
@@ -341,18 +335,19 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 30%;
 }
 
 .div_grid{
-    width: 80%;
-    height: auto;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
     justify-content: center;
-    align-items: center;
-    gap: 20PX;
+    display: flex;
+    flex-wrap: wrap;
+    align-content:flex-start ;
+    gap: 30px;
+    margin-top:8% ;
+
 }
 
 .div_grid div{
@@ -401,4 +396,420 @@ footer img{
 
 .footer_h3{
     margin-right: 50px;
+}
+
+@media screen and (max-width: 1335px){
+    .div_section1{
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+        margin-top: 50%;
+    }
+
+    .img_auriculares{
+        max-width: 600px;
+        height: 85%;
+        border-radius: 200px 200px 200px 200px;
+        border: solid 4px white;
+        box-shadow: 0 0 5px #d487d4,
+        0 0 25px #d487d4,
+        0 0 50px #a049b4,
+        0 0 75px #a049b4;
+    }
+
+    .img_auriculares:hover{
+        max-width: 600px;
+    transition: none;
+    }
+
+    .div_section2{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 70px;
+        margin-top: 50%;
+    }
+
+    .img_mouse{
+        max-width: 600px;
+        height: 85%;
+        border-radius: 200px 200px 200px 200px;
+        border: solid 4px white;
+        box-shadow: 0 0 5px #d487d4,
+        0 0 25px #d487d4,
+        0 0 50px #a049b4,
+        0 0 75px #a049b4;
+    }
+
+    .img_mouse:hover{
+        max-width: 600px;
+    transition: none;
+    }
+
+    .section_cards{
+        margin-top: 50%;
+    }
+
+    footer{
+        gap: 200px;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 32%;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .section_cards{
+        margin-top: 50%;
+    }
+
+    .section2{
+            margin-top: 60%;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 30%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .section_cards{
+        margin-top: 60%;
+    }
+
+    .section2{
+            margin-top: 70%;
+    }
+
+    footer{
+        gap: 150px;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 28%;
+    }
+}
+
+@media screen and (max-width: 656px){
+    .img_auriculares{
+        width: 500px;
+    }
+
+    .img_mouse{
+        width: 500px;
+    }
+
+    .section_cards{
+        margin-top: 75%;
+    }
+
+    .section2{
+            margin-top: 85%;
+    }
+
+    footer{
+        gap: 100px;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 26%;
+    }
+}
+
+@media screen and (max-width: 595px){
+    .section_cards{
+        margin-top: 85%;
+    }
+
+    .section2{
+        margin-top: 95%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .img_auriculares{
+        width: 400px;
+    }
+
+    .img_mouse{
+        width: 400px;
+    }
+
+    .section_cards{
+        margin-top: 105%;
+    }
+
+    .section2{
+        margin-top: 115%;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 23%;
+    }
+
+    footer{
+        gap: 70px;
+    }
+}
+
+@media screen and (max-width: 490px){
+    .img_auriculares{
+        width: 350px;
+    }
+
+    .img_mouse{
+        width: 350px;
+    }
+
+    .section_cards{
+        margin-top: 115%;
+    }
+
+    .section2{
+        margin-top: 125%;
+    }
+}
+
+@media screen and (max-width: 475px){
+    .section_cards{
+        margin-top: 130%;
+    }
+
+    .section2{
+        margin-top: 150%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .section_cards{
+        margin-top: 150%;
+    }
+
+    .section2{
+        margin-top: 170%;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 21%;
+    }
+
+    footer{
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .section_cards{
+        margin-top: 170%;
+    }
+
+    .section2{
+        margin-top: 190%;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 21%;
+    }
+}
+
+@media screen and (max-width: 405px){
+    .section_cards{
+        margin-top: 190%;
+    }
+
+    .section2{
+        margin-top: 210%;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 19%;
+    }
+
+    footer{
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 395px){
+    .section_cards{
+        margin-top: 210%;
+    }
+
+    .section2{
+        margin-top: 210%;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 19%;
+    }
+
+    .img_card{
+        width: 270px;
+        height: 270px;
+    }
+}
+
+@media screen and (max-width: 385px){
+    .section_cards{
+        margin-top: 230%;
+    }
+
+    .section2{
+        margin-top: 240%;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 18%;
+    }
+}
+
+@media screen and (max-width: 365px){
+    .section_cards{
+        margin-top: 260%;
+    }
+
+    .section2{
+        margin-top: 280%;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 19%;
+    }
+
+    .img_auriculares{
+        width: 300px;
+    }
+
+    .img_mouse{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .section_cards{
+        margin-top: 300%;
+    }
+
+    .section2{
+        margin-top: 300%;
+    }
+
+    .logo2{
+        top: 400%;
+    left: 18%;
+    }
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+
+.overlay {
+    position: absolute;
+    top: 11.5vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1; /*Para que quede por encima del resto de las cosas*/
+  
+    /*Efecto de Glassmorphismo*/
+    background-color: rgba(22, 22, 22, 0.238);
+    backdrop-filter: blur(5px);
+    display: none;
+}
+  
+  /*Toggle para el overlay (para que funcione unicamente cuando abrimos carrito o menu hamburguesa.
+    Aclarar que funciona porque son elementos hermanos y overlay esta debajo de los dos inputs en el código.*/
+  .show_overlay {
+    display: block;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------*/
+
+.bars{
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+    .explorador{
+        width: auto;
+    }
+    .nav2{
+        justify-content: space-between;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .bars{
+        display: flex;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    .menu_label{
+        display: block;
+        background-color: transparent;
+        border: none;
+    }
+
+    .menu{
+    position: absolute;
+    top: 11.5vh;
+    padding: 50px 30px;
+    right: 0px;
+    background: rgba(0, 0, 0, 0.888);
+    display: flex;
+    flex-direction: column;
+    height: 99vh;
+    overflow-y: scroll;
+    z-index: 2;
+    min-width: 80%;
+    transform: translate(200%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+    border: solid 1px #d487d4;
+    gap: 20%;
+    }
+
+    .menu li a{
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        gap: 15px;
+        transition: all 0.5s ease;
+        padding: 18px 35px;
+        border: solid 1px #d487d4;
+    }
+
+    .open_menu{
+        transform: translate(-13%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+    }
+
+    .cart{
+        top: 8.8vh;
+    }
+    
+    .overlay{
+        top: 8.8vh;
+    }
+
+}
+
+@media screen and (max-width: 377px) {
+    .cart{
+        min-width: 90%;
+    }
 }
