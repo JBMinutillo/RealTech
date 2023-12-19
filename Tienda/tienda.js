@@ -26,16 +26,34 @@ const barsMenu = document.querySelector(".navbar_list");
 //overlay
 const overlay = document.querySelector(".overlay");
 
+//Cart bubble
+const cartBubble = document.querySelector(".cart_bubble");
+
+//Total
+const total = document.querySelector(".total");
+
+//Btn Comprar
+const buyBtn = document.querySelector(".btn_buy");
+
+//Btn Borrar
+const deleteBtn = document.querySelector(".btn_delete");
+
+//Cart container
+const productsCart = document.querySelector(".cart_container"); 
+
+//Seteamos carrito
+let cart = [];
+
 //Funcion para crear el html del producto
 const createProductTemplate = (products) => {
-  const { id, nombre, precio, stock, categoria, img} = products;
+  const { id, nombre, precio, stock, categoria, img} = products; 
 
 return `<div class="card">
   <img src="${img}" alt="" class="img_card" />
   <h2 class="producto_name">${nombre}</h2>
   <div class="btn_card">
     <a href="" class="link_vermas">Ver Más</a>
-    <button class="btn_carrito" id="btn_sumaralcarrito">Sumar al carrito</button>
+    <button class="btn_carrito btn_add" data-id='${id}'  data-name='${nombre}' data-bid='${precio}' data-img='${img}' >Sumar al carrito</button>
   </div>
   </div>`
 
@@ -121,7 +139,7 @@ const isInactiveFilterBtn = (element) =>{
   );
 };
 
-//Carrito
+//Carrito y Mneu BTN
 
 const toggleCart = () => {
   cartMenu.classList.toggle("open_cart");
@@ -149,6 +167,48 @@ const closeOverlayClick = () => {
   barsMenu.classList.remove("open_menu");
   cartMenu.classList.remove("open_cart");
   overlay.classList.remove("show_overlay");
+};
+
+//Cart
+const renderCart = () => {
+  if(!cart.length){
+  productsCart.innerHTML = '<p class="empty_msg">Agrega un producto</p>'
+  return;
+}
+}
+
+
+const addProduct = (e) => {
+  if(!e.target.classList.contains("btn_add")) return;
+  const product = e.target.dataset;
+
+  if(isExistingCartProduct(product)){
+    addUnitToProduct(product);
+  } else {
+    createCartProduct(product);
+  }
+
+  renderCart();
+  console.log(cart);
+};
+
+//funct para aagregar una unidad al producto
+const addUnitToProduct = (product) => {
+  cart = cart.map((cartProduct) => 
+    cartProduct.id === product.id
+    ? {...cartProduct, quantity: cartProduct.quantity + 1 }
+    : cartProduct
+    );
+}
+
+//funct para saber si un prodcuto ya estea ne el cart
+const isExistingCartProduct = (product) => {
+  return cart.find((item) => item.id === product.id);
+};
+
+//funcion praa crear un objeto con la info del product que qeuremos agregar al cart
+const createCartProduct = (product) => {
+  cart = [...cart, {...product, quantity: 1}];
 }
 
 //Funcion init
@@ -161,6 +221,9 @@ const init = () => {
   menuBtn.addEventListener("click", toggleMenu);
 
   overlay.addEventListener("click", closeOverlayClick);
+
+  ProductContainer.addEventListener("click", addProduct);
+  document.addEventListener("DOMContentLoaded", renderCart);
 };
 
 init();
