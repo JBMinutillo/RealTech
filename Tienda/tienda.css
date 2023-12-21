@@ -314,14 +314,14 @@ main{
     position: relative;
   }
   
-  .cart-bubble {
+  .cart_bubble {
     position: absolute;
-    top: -8px;
-    right: -8px;
+    top: 12px;
+    right: 28px;
     text-align: center;
-    background: 0;
+    background: #c43ad6;
     color: white;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 500;
     height: 18px;
     width: 18px;
@@ -483,6 +483,10 @@ main{
     font-size: 14px;
   }
 
+  .cart-bubble{
+
+  }
+
   .btn_buy{
     margin-top: 5%;
     width: 100%;
@@ -560,6 +564,45 @@ main{
     color: white;
 }
 
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+.cart-item{
+    display: flex;
+    gap: 20px;
+    color: white;
+    padding: 10px 15px;
+    border: solid 1px #d487d4;
+    align-items: center;
+}
+
+.cart-item img{
+    width: 72px;
+    height: 72px;
+    background-color: white;
+}
+
+.item-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.item-title{
+    font-size: 30px;
+    color: #d487d4;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.item-precio{
+    display: flex;
+    align-items: center;
+}
+
+.span-price{
+    color: transparent;
+}
 /*------------------------------------------------------------------------------------------------------------------------*/
 
 .bars_button{

@@ -169,14 +169,54 @@ const closeOverlayClick = () => {
   overlay.classList.remove("show_overlay");
 };
 
-//Cart
-const renderCart = () => {
-  if(!cart.length){
-  productsCart.innerHTML = '<p class="empty_msg">Agrega un producto</p>'
-  return;
-}
-}
 
+//Cart
+//funcion para crear el template del product en el carrito
+const createCartProductTemplate = (cartProduct) => {
+  const {id, name, bid, stock, categoria, img, quantity} = cartProduct
+
+  return `
+  <div class="cart-item">
+            <img src="${img}" alt="${name}" />
+            <div class="item-info">
+              <h3 class="item-title">${name}</h3>
+              <div  class="item-precio">
+              <p class="item-bid">Total:<span class="span-price">.</span></p>
+              <span class="item-price"> ${bid}$</span>
+              </div>
+            </div>
+            <div class="item-handler">
+              <span class="quantity-handler down" data-id=${id}>-</span>
+              <span class="item-quantity">${quantity}</span>
+              <span class="quantity-handler up" data-id=${id}>+</span>
+            </div>
+          </div>
+  `
+};
+
+// Render carrito
+const renderCart = () => {
+  if (!cart.length) {
+    productsCart.innerHTML = `<p class="empty-msg">Agrega un producto</p>`;
+    return;
+  }
+  productsCart.innerHTML = cart.map(createCartProductTemplate).join('')
+};
+
+//fubnt para obtener el total de la compra
+const getCartTotal = () => {
+  return cart.reduce((total, producto) => total + Number(producto.bid) * producto.quantity ,0) 
+};
+
+//funct para mostar el totaol del cxart
+const showCartTotal = () => {
+  total.innerHTML = `${getCartTotal().toFixed(2)}$`
+};
+
+//funct para actualkizar brubuja cn lña cantidad de product
+const renderCartBubble = () =>  {
+  cartBubble.textContent = cart.reduce((acc, cur) => acc + cur.quantity ,0)
+};
 
 const addProduct = (e) => {
   if(!e.target.classList.contains("btn_add")) return;
@@ -189,6 +229,8 @@ const addProduct = (e) => {
   }
 
   renderCart();
+  showCartTotal();
+  renderCartBubble()
   console.log(cart);
 };
 
@@ -223,6 +265,7 @@ const init = () => {
   overlay.addEventListener("click", closeOverlayClick);
 
   ProductContainer.addEventListener("click", addProduct);
+  productsCart.addEventListener('click', handleQuantity);
   document.addEventListener("DOMContentLoaded", renderCart);
 };
 
