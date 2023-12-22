@@ -33,16 +33,20 @@ const cartBubble = document.querySelector(".cart_bubble");
 const total = document.querySelector(".total");
 
 //Btn Comprar
-const buyBtn = document.querySelector(".btn_buy");
+const buyBtn = document.querySelector(".btn-buy");
 
 //Btn Borrar
-const deleteBtn = document.querySelector(".btn_delete");
+const deleteBtn = document.querySelector(".btn-delete");
 
 //Cart container
 const productsCart = document.querySelector(".cart_container"); 
 
 //Seteamos carrito
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+const saveCart = () => {
+  localStorage.setItem("cart", JSON.stringify(cart))
+}
 
 //Funcion para crear el html del producto
 const createProductTemplate = (products) => {
@@ -181,7 +185,7 @@ const createCartProductTemplate = (cartProduct) => {
             <div class="item-info">
               <h3 class="item-title">${name}</h3>
               <div  class="item-precio">
-              <p class="item-bid">Total:<span class="span-price">.</span></p>
+              <p class="item-bid">Unidad:<span class="span-price">.</span></p>
               <span class="item-price"> ${bid}$</span>
               </div>
             </div>
@@ -218,6 +222,27 @@ const renderCartBubble = () =>  {
   cartBubble.textContent = cart.reduce((acc, cur) => acc + cur.quantity ,0)
 };
 
+// Funcion para habilitar o deshabilitar botones (no funciona)
+const disableBtn = (btn) => {
+  if(!cart.length){
+    btn.classList.add('disabled')
+  } else {
+    btn.classList.remove('disabled')
+  } 
+}
+
+// Funcion para ejecutar funciones necesarias para acrtueealizr el estado de,l cart
+const updateCartState = () => {
+  
+  saveCart();
+  renderCart();
+  showCartTotal();
+  disableBtn(buyBtn);
+  disableBtn(deleteBtn);
+  renderCartBubble();
+}
+
+
 const addProduct = (e) => {
   if(!e.target.classList.contains("btn_add")) return;
   const product = e.target.dataset;
@@ -228,9 +253,7 @@ const addProduct = (e) => {
     createCartProduct(product);
   }
 
-  renderCart();
-  showCartTotal();
-  renderCartBubble()
+  updateCartState()
   console.log(cart);
 };
 
@@ -253,6 +276,75 @@ const createCartProduct = (product) => {
   cart = [...cart, {...product, quantity: 1}];
 }
 
+const handlePlusBtnEvent = (id) => {
+  const ExistingCartProduct = cart.find(item => item.id === id)
+  addUnitToProduct(ExistingCartProduct)
+}
+
+// Funcion para manejar el evento click del - en el producto carrito
+const handleMinusBtnEvent = (id) => {
+  const existingCartProduct = cart.find(item => item.id === id)
+
+  if(existingCartProduct.quantity === 1){
+    if(window.confirm('¿Desea eliminar el producto?')){
+      removeProductFromCart(existingCartProduct)
+    }
+    return
+  }
+
+  substractProductUnit(existingCartProduct)
+}
+
+const substractProductUnit = (existingCartProduct) => {
+  cart = cart.map((product) => {
+    return product.id === existingCartProduct.id
+    ? {...product, quantity: Number(product.quantity) - 1}
+    : product
+  })
+}
+
+const removeProductFromCart = (existingCartProduct) => {
+  cart = cart.filter((product) => product.id !== existingCartProduct.id)
+  updateCartState()
+}
+
+
+
+const handleQuantity = (e) => {
+  if(e.target.classList.contains('up')){
+    handlePlusBtnEvent(e.target.dataset.id)
+  } else if(e.target.classList.contains('down')){
+    handleMinusBtnEvent(e.target.dataset.id)
+  }
+
+  // para todos los casos
+  updateCartState()
+}
+
+
+
+const resetCartItems = () => {
+  cart = []
+  updateCartState()
+}
+
+const completeCartAction = (confirmMsg,successMsg) => {
+  if(!cart.length) return
+  if(window.confirm(confirmMsg)){
+    resetCartItems()
+    alert(successMsg)
+  }
+}
+
+const completeBuy = () => {
+  completeCartAction('¿Deseas completar tu compra?', "Gracais por su compra")
+}
+
+const deleteCart = () => {
+  completeCartAction('¿Desea borrar el carro?', "El carrito se ha vaciado correctamente")
+}
+
+
 //Funcion init
 const init = () => {
   renderProducts(AppState.products[0]);
@@ -267,6 +359,12 @@ const init = () => {
   ProductContainer.addEventListener("click", addProduct);
   productsCart.addEventListener('click', handleQuantity);
   document.addEventListener("DOMContentLoaded", renderCart);
+
+  buyBtn.addEventListener("click", completeBuy)
+  deleteBtn.addEventListener("click", deleteCart)
+  disableBtn(buyBtn);
+  disableBtn(deleteBtn);
+  renderCartBubble(cart)
 };
 
 init();
