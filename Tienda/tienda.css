@@ -443,12 +443,21 @@ main{
     padding: 1px 2px;
     border: solid 1px #d487d4;
   }
+
+  .up:hover{
+    cursor: pointer;
+  }
   
   .down {
     padding: 1px 2px;
     border: 1px solid #d487d4;
   }
   
+  .down:hover{
+    cursor: pointer;
+  }
+  
+
   .divider {
     margin-top: 20px;
     border: solid 2px #d487d4;
