@@ -23,6 +23,17 @@ header{
     border-bottom: solid 2px white;
 }
 
+main{
+    height: 100%;
+    margin-top: 15%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 35vh;
+}
+
 /*--------------------------------------------------------Nav-----------------------------------------------------*/
 
 .nav{
@@ -35,6 +46,8 @@ header{
     transition: all 0.5s ease;
     height: 11.5vh;
 }
+
+
 
 .nav.active{
     background-color: rgba(0, 0, 0, 0.505);
@@ -70,7 +83,7 @@ header{
 
 .menu{
     display: flex;
-    gap: 7%;
+    gap: 30px;
     justify-content: center;
     align-items: center;
 }
@@ -101,12 +114,22 @@ header{
     margin-right: 5%;
 }
 
+.logo2div{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo2{
-    position: absolute;
+    /*height: 140px;
+    /*position: absolute;*/
     background-color: rgba(0, 0, 0, 0.371);
     padding: 2% 10%;
-    top: 400%;
-    left: 35%;
+    /*top: 50%;
+    left: 50%;*/
     color: white;
     font-size: 40px;
     opacity: 1;
@@ -153,7 +176,6 @@ header{
 .section1{
     width: 100%;
     height: 75vh;
-    margin-top: 20%;
 }
 
 .div_section1{
@@ -175,10 +197,10 @@ header{
     0 0 75px #a049b4;
 }
 
-.img_auriculares:hover{
+/*.img_auriculares:hover{
     max-width: 704px;
     transition: all 0.5s ease;
-}
+}*/
 
 .official_products{
     display: flex;
@@ -190,6 +212,7 @@ header{
 }
 
 .official_products div{
+
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -201,16 +224,18 @@ header{
     border-radius: 5px;
     color: white;
     transition: all 0.5s ease;
+
+    font-size: 17.5px;
 }
 
-.official_products div:hover{
+/*.official_products div:hover{
     outline: solid 2px white;
     box-shadow: 0 0 5px #d487d4,
     0 0 25px #d487d4,
     0 0 50px #a049b4,
     0 0 75px #a049b4;
     transition: all 0.5s ease;
-}
+}*/
 
 .h3_official_product:hover{
     text-shadow: 0 0 5px #d487d4,
@@ -238,7 +263,6 @@ header{
 .section2{
     width: 100%;
     height: 75vh;
-    margin-top: 30%;
 }
 
 .div_section2{
@@ -259,19 +283,18 @@ header{
 .section3{
     width: 100%;
     height: auto;
-    margin-top: 8%;
     display: flex;
     justify-content: center;
 }
 
 .div_section3{
-    width: 65%;
+    width: 75%;
     color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-size: 22px;
+    font-size: 17.5px;
     text-align: center;
     gap: 30px;
     border: solid 4px white;
@@ -289,8 +312,7 @@ header{
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 50vh;
-    margin-top: 5%;
+    /*height: 50vh;*/
 }
 
 .div_section4{
@@ -335,7 +357,6 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30%;
 }
 
 .div_grid{
@@ -399,11 +420,15 @@ footer img{
 }
 
 @media screen and (max-width: 1335px){
+    main {
+        gap: 45vh;
+    }
+
     .div_section1{
         display: flex;
         flex-direction: column;
         gap: 70px;
-        margin-top: 50%;
+        /*margin-top: 50%;*/
     }
 
     .img_auriculares{
@@ -426,7 +451,7 @@ footer img{
         display: flex;
         flex-direction: column-reverse;
         gap: 70px;
-        margin-top: 50%;
+        /*margin-top: 50%;*/
     }
 
     .img_mouse{
@@ -445,64 +470,57 @@ footer img{
     transition: none;
     }
 
-    .section_cards{
-        margin-top: 50%;
-    }
+    /*.section_cards{
+        /*margin-top: 50%;
+    }*/
 
     footer{
         gap: 200px;
     }
 
-    .logo2{
+   /* .logo2{
         top: 400%;
     left: 32%;
     }
 
     .logo2:hover{
         left: 31.85%;
+    }*/
+}
+
+@media screen and (max-width: 1200px){
+    main{
+        gap: 55vh;
     }
 }
 
-@media screen and (max-width: 850px){
-    .section_cards{
-        margin-top: 50%;
-    }
-
-    .section2{
-            margin-top: 60%;
-    }
-
-    .logo2{
-        top: 400%;
-    left: 30%;
-    }
-
-    .logo2:hover{
-        left: 29.85%;
+@media screen and (max-width: 900px){
+    main{
+        gap: 70vh;
     }
 }
 
 @media screen and (max-width: 750px){
-    .section_cards{
-        margin-top: 60%;
+    /*.section_cards{
+        /*margin-top: 60%;
     }
 
     .section2{
-            margin-top: 70%;
-    }
+           /* margin-top: 70%;
+    }*/
 
     footer{
         gap: 150px;
     }
 
-    .logo2{
+    /*.logo2{
         top: 400%;
     left: 28%;
-    }
+    }*/
 
-    .logo2:hover{
+    /*.logo2:hover{
         left: 27.85%;
-    }
+    }*/
 }
 
 @media screen and (max-width: 656px){
@@ -514,29 +532,37 @@ footer img{
         width: 500px;
     }
 
-    .section_cards{
-        margin-top: 75%;
+   /* .section_cards{
+        /*margin-top: 75%;*
     }
 
     .section2{
-            margin-top: 85%;
-    }
+           /* margin-top: 85%;*
+    }*/
 
     footer{
         gap: 100px;
     }
 
-    .logo2{
+    /*.logo2{
         top: 400%;
     left: 26%;
+    }*/
+
+    /*.logo2:hover{
+        left: 25.85%;
+    }*/
+
+    .official_products div{
+        width: 80%;
     }
 
-    .logo2:hover{
-        left: 25.85%;
+    .div_section3{
+        width: 95%;
     }
 }
 
-@media screen and (max-width: 595px){
+/*@media screen and (max-width: 595px){
     .section_cards{
         margin-top: 85%;
     }
@@ -544,7 +570,7 @@ footer img{
     .section2{
         margin-top: 95%;
     }
-}
+}*/
 
 @media screen and (max-width: 550px){
     .img_auriculares{
@@ -555,7 +581,7 @@ footer img{
         width: 400px;
     }
 
-    .section_cards{
+   /* .section_cards{
         margin-top: 105%;
     }
 
@@ -566,15 +592,15 @@ footer img{
     .logo2{
         top: 400%;
     left: 23%;
-    }
+    }*/
 
     footer{
         gap: 70px;
     }
 
-    .logo2:hover{
+    /*.logo2:hover{
         left: 22.85%;
-    }
+    }*/
 }
 
 @media screen and (max-width: 490px){
@@ -586,16 +612,16 @@ footer img{
         width: 350px;
     }
 
-    .section_cards{
+   /* .section_cards{
         margin-top: 115%;
     }
 
     .section2{
         margin-top: 125%;
-    }
+    }*/
 }
 
-@media screen and (max-width: 475px){
+/*@media screen and (max-width: 475px){
     .section_cards{
         margin-top: 130%;
     }
@@ -603,32 +629,32 @@ footer img{
     .section2{
         margin-top: 150%;
     }
-}
+}*/
 
 @media screen and (max-width: 450px){
-    .section_cards{
+    /*.section_cards{
         margin-top: 150%;
     }
 
     .section2{
         margin-top: 170%;
-    }
+    }*/
 
-    .logo2{
+   /* .logo2{
         top: 400%;
     left: 21%;
-    }
+    }*/
 
     footer{
         gap: 40px;
     }
 
-    .logo2:hover{
+  /*  .logo2:hover{
         left: 20.85%;
-    }
+    }*/
 }
 
-@media screen and (max-width: 430px){
+/*@media screen and (max-width: 430px){
     .section_cards{
         margin-top: 170%;
     }
@@ -645,10 +671,10 @@ footer img{
     .logo2:hover{
         left: 20.85%;
     }
-}
+}*/
 
 @media screen and (max-width: 405px){
-    .section_cards{
+   /* .section_cards{
         margin-top: 190%;
     }
 
@@ -659,19 +685,19 @@ footer img{
     .logo2{
         top: 400%;
     left: 19%;
-    }
+    }*/
 
     footer{
         gap: 10px;
     }
 
-    .logo2:hover{
+   /* .logo2:hover{
         left: 18.85%;
-    }
+    }*/
 }
 
 @media screen and (max-width: 395px){
-    .section_cards{
+    /*.section_cards{
         margin-top: 210%;
     }
 
@@ -682,15 +708,19 @@ footer img{
     .logo2{
         top: 400%;
     left: 19%;
-    }
+    }*/
 
     .img_card{
         width: 270px;
         height: 270px;
     }
+
+    .official_products div{
+        width: 90%;
+    }
 }
 
-@media screen and (max-width: 385px){
+/*@media screen and (max-width: 385px){
     .section_cards{
         margin-top: 230%;
     }
@@ -707,16 +737,16 @@ footer img{
     .logo2:hover{
         left: 17.85%;
     }
-}
+}*/
 
 @media screen and (max-width: 365px){
-    .section_cards{
+    /*.section_cards{
         margin-top: 260%;
     }
 
     .section2{
         margin-top: 280%;
-    }
+    }*/
 
     .img_auriculares{
         width: 300px;
@@ -727,7 +757,7 @@ footer img{
     }
 }
 
-@media screen and (max-width: 340px){
+/*@media screen and (max-width: 340px){
     .section_cards{
         margin-top: 300%;
     }
@@ -744,7 +774,7 @@ footer img{
     .logo2:hover{
         left: 17.85%;
     }
-}
+}*/
 
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 
