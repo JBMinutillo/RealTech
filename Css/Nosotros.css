@@ -94,7 +94,7 @@ header{
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 90vh;
+    height: auto;
 }
 
 .div_nosotros{
@@ -104,7 +104,7 @@ header{
     align-items: center;
     text-align: center;
     width: 70%;
-    height: 85%;
+    height: auto;
     margin-top: 9%;
     color: white;
     text-align: left;
@@ -131,15 +131,18 @@ header{
     width: 100%;
     height: 80vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 15vh;
+    color: white;
 }
 
 .div_redes{
     width: 70%;
     height: auto;
     display: flex;
+
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -147,8 +150,9 @@ header{
     gap: 50px;
 }
 
-.div_redes h4{
+.redes h4{
     font-size: 30px;
+    margin-bottom: 15vh;
 }
 
 .div_cards{
@@ -167,7 +171,7 @@ header{
 }
 
 .div_card_individual:hover{
-    width: 43%;
+    width: 320px;
     border: solid 4px white;
     box-shadow: 0 0 5px #d487d4,
     0 0 25px #d487d4,
@@ -177,7 +181,7 @@ header{
 }
 
 .div_card_individual{
-    width: 40%;
+    width: 310px;
     height: 50vh;
     border-radius: 20px;
     display: flex;
@@ -191,7 +195,117 @@ header{
 }
 
 .div_cards img{
-    max-width: 60%;
+    max-width: 80%;
 }
 
+.overlay {
+    position: absolute;
+    top: 11.5vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1; /*Para que quede por encima del resto de las cosas*/
+  
+    /*Efecto de Glassmorphismo*/
+    background-color: rgba(22, 22, 22, 0.238);
+    backdrop-filter: blur(5px);
+    display: none;
+}
+  
+  /*Toggle para el overlay (para que funcione unicamente cuando abrimos carrito o menu hamburguesa.
+    Aclarar que funciona porque son elementos hermanos y overlay esta debajo de los dos inputs en el código.*/
+  .show_overlay {
+    display: block;
+}
 
+/*------------------------------------------------------------------------------------------------------------------------*/
+
+.bars{
+    display: none;
+}
+
+@media screen and (max-width: 1150px){
+    .div_nosotros{
+        margin-top: 200px;
+        margin-bottom: 200px;
+    }
+
+    .div_cards{
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+
+@media screen and (max-width: 850px){
+        .explorador{
+            width: auto;
+        }
+        .nav2{
+            justify-content: space-between;
+        }
+    
+        .logo{
+            display: block;
+        }
+    
+        .bars{
+            display: flex;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+    
+        .menu_label{
+            display: block;
+            background-color: transparent;
+            border: none;
+        }
+    
+        .menu{
+        position: absolute;
+        top: 11.5vh;
+        padding: 50px 30px;
+        right: 0px;
+        background: rgba(0, 0, 0, 0.888);
+        display: flex;
+        flex-direction: column;
+        height: 99vh;
+        overflow-y: scroll;
+        z-index: 2;
+        min-width: 80%;
+        transform: translate(200%);
+        transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+        border: solid 1px #d487d4;
+        gap: 20%;
+        }
+    
+        .menu li a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            gap: 15px;
+            transition: all 0.5s ease;
+            padding: 18px 35px;
+            border: solid 1px #d487d4;
+        }
+    
+        .open_menu{
+            transform: translate(-13%);
+        transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+        }
+    
+        .cart{
+            top: 8.8vh;
+        }
+        
+        .overlay{
+            top: 8.8vh;
+        }
+    
+    }
+
+    @media screen and (max-width: 450px){
+        .div_nosotros h3{
+            font-size: 25px;
+        }
+    }
